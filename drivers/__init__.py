@@ -7,7 +7,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 
 class ChromeDriver:
-    def options(options=[]):
+    def options(self, options=[]):
         chrome_options = Options()
         for opt in options:
             if type(opt) == list:
@@ -19,7 +19,6 @@ class ChromeDriver:
 
     def webdriver(self, options=[]):
         return webdriver.Chrome(ChromeDriverManager().install(), chrome_options=self.options(options))
-
 
 class FirefoxDriver:
     def options(options=[]):
